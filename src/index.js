@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import 'amfe-flexible';
+import './index.scss';
+import App from './views/App/App';
 import * as serviceWorker from './serviceWorker';
+import 'whatwg-fetch'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

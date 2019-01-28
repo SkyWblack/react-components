@@ -1,0 +1,48 @@
+.hg-card {
+	padding: 0 0.53333rem;
+	overflow: hidden;
+	background-color: #fff;
+	border-bottom: 0.13333rem solid #f0f0f0;
+	.card-above {
+		display: flex;
+		flex-wrap: nowrap;
+		margin: 0.4rem 0;
+		.card-above_left {
+			width: 2.2rem;
+			height: 2.2rem;
+			border-radius: 0.10667rem;
+			overflow: hidden;
+			background-color: #897978;
+		}
+		.card-above_right {
+			flex: 1;
+			text-align: left;
+			letter-spacing: 0.02667rem;
+			padding-left: 0.4rem;
+			position: relative;
+			.card-above_right_content {
+				h1 {
+					width: 4rem;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					font-size: 0.4rem;
+					color: #010101;
+          font-weight: 600;
+          margin: 0;
+				}
+				span {
+          display: block;
+					width: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					font-size: 0.36rem;
+					color: #999;
+					padding-top: 0.2rem;
+					position: relative;
+				}
+			}
+		}
+	}
+}

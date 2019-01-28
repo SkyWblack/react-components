@@ -1,0 +1,20 @@
+.hg-search {
+	box-sizing: border-box;
+	padding: 10px 0;
+	background-color: #fff;
+	.am-search {
+		height: 40px;
+		background-color: #fff;
+		.am-search-input {
+			height: 100%;
+			background-color: #efeff4;
+			border-radius: 60px;
+			.am-search-synthetic-ph {
+				height: 100%;
+			}
+			input {
+				height: 100%;
+			}
+		}
+	}
+}
