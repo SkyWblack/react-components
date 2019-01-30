@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'amfe-flexible';
-import './index.scss';
-import App from './views/App/App';
+import './css/index.scss';
+import './css/common.scss';
+import router from './router/router';
 import * as serviceWorker from './serviceWorker';
-import 'whatwg-fetch'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(router(), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

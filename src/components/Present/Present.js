@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'antd-mobile';
-import HGcard from '../HGcard/HGcard';
-import Scroll from '../Scroll/Scroll';
+import { HGcard, Scroll, Banner } from '../';
 import './present.scss';
 
 export default class Present extends Component {
@@ -16,6 +14,10 @@ export default class Present extends Component {
 		this.onRefresh();
 	}
 
+	onAddItem = () => {
+		this.scroll && this.scroll.onRefresh();
+	};
+
 	onRefresh = () => {
 		let obj = {
 			title: '这是测试活动',
@@ -24,29 +26,32 @@ export default class Present extends Component {
 			location: '上海市南京东路科技京城'
 		};
 		let arr = [];
-		for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < 13; i++) {
 			arr.push(obj);
 		}
-		setTimeout(() => {
-			this.setState({
-				list: this.state.list.concat(arr)
-			});
-		}, 1000);
+		this.setState({
+			list: this.state.list.concat(arr)
+		});
+	};
+
+	onApplyThis = (ref) => {
+		this.scroll = ref;
 	};
 
 	scrollListist(list) {
+		let $list = list.map((item, index) => <HGcard key={index} item={item} />);
 		return (
-			<Card>
-				<Card.Header title="今日活动" thumb={require('../../static/circle.png')} />
-				<Card.Body>{list.map((item, index) => <HGcard key={index} item={item} />)}</Card.Body>
-			</Card>
+			<div>
+				<div style={{ height: '50px', background: '#000' }} onClick={this.onAddItem} />
+				<Banner params={{ src: require('../../static/circle.png'), title: '今日活动', list: $list }} />
+			</div>
 		);
 	}
 
 	render() {
 		return (
-			<div className="present" ref={(el) => (this.$el = el)}>
-				<Scroll scrollList={this.scrollListist(this.state.list)} />
+			<div className="hg-present container">
+				<Scroll scrollList={this.scrollListist(this.state.list)} onScrollRefresh={this.onApplyThis} />
 			</div>
 		);
 	}

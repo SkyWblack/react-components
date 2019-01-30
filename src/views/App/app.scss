@@ -1,6 +1,8 @@
 .app {
 	height: 100%;
+	overflow: hidden;
 	.hg-tab {
 		height: calc(100% - 110px);
+		overflow: hidden;
 	}
 }

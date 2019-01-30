@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd-mobile';
-import Search from '../../components/Search/Search';
-import Nav from '../../components/Nav/Nav';
-import Present from '../../components/Present/Present';
-import Publish from '../../components/Publish/Publish';
+import { Search, Nav, Present, Publish, ChoiceActivity } from '../../components';
 import './app.scss';
 
 export default class App extends Component {
@@ -15,6 +12,8 @@ export default class App extends Component {
 		};
 	}
 
+	onChange(tab, index) {}
+
 	render() {
 		return (
 			<div className="app">
@@ -25,6 +24,10 @@ export default class App extends Component {
 						tabs={this.state.tabs}
 						tabBarTextStyle={{ fontSize: '18px' }}
 						tabBarUnderlineStyle={{ border: '2px #108ee9 solid' }}
+						prerenderingSiblingsNumber={5}
+						useOnPan={false}
+						destroyInactiveTab={true}
+						onChange={this.onChange}
 					>
 						{this.state.tabs.map((item, index) => {
 							if (item.title === '当前') {
@@ -32,20 +35,7 @@ export default class App extends Component {
 							} else if (item.title === '发布') {
 								return <Publish key={index} />;
 							} else if (item.title === '创建') {
-								return (
-									<div
-										key={index}
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-											justifyContent: 'center',
-											height: '100%',
-											backgroundColor: '#fff'
-										}}
-									>
-										创建
-									</div>
-								);
+								return <ChoiceActivity key={index} />;
 							} else if (item.title === '审批') {
 								return (
 									<div

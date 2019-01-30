@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { SegmentedControl } from 'antd-mobile';
-import Scroll from '../Scroll/Scroll';
-import HGcard from '../HGcard/HGcard';
+import { HGcard, Scroll} from '../';
 import './publish.scss';
 
 export default class Publish extends Component {
@@ -45,7 +44,7 @@ export default class Publish extends Component {
 			location: '上海市南京东路科技京城'
 		};
 		let arr = [];
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 20; i++) {
 			arr.push(obj);
 		}
 		setTimeout(() => {
@@ -62,7 +61,7 @@ export default class Publish extends Component {
 
 	render() {
 		return (
-			<div className="publish">
+			<div className="hg-publish container">
 				<Scroll scrollList={this.scrollListist(this.state.list)} />
 			</div>
 		);
