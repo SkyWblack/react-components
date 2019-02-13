@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { withRouter } from '../';
 import './hgcard.scss';
 
-export default class HGcard extends Component {
+class HGcard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,7 +13,7 @@ export default class HGcard extends Component {
 	render() {
 		return (
 			<div className="hg-card">
-				<div className="card-above">
+				<div className="card-above" onClick={this.props.myClick}>
 					<div className="card-above_left" />
 					<div className="card-above_right">
 						<div className="card-above_right_content">
@@ -28,3 +29,5 @@ export default class HGcard extends Component {
 		);
 	}
 }
+
+export default withRouter(HGcard);

@@ -12,12 +12,15 @@ export default class App extends Component {
 		};
 	}
 
-	onChange(tab, index) {}
+	onChange = (tab, index) => {
+		//  当tab切换时，通知scroll组件 重新计算dom
+		console.log(tab, index);
+	};
 
 	render() {
 		return (
 			<div className="app">
-				<Nav />
+				<Nav title="活动管理" />
 				<Search disabled={this.state.disabled} />
 				<div className="hg-tab">
 					<Tabs
