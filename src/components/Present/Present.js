@@ -1,21 +1,70 @@
 import React, { Component } from 'react';
-import { HGcard, Scroll, Banner } from '../';
+import { withRouter, HGcard, Scroll, Banner } from '../';
 import './present.scss';
 
-export default class Present extends Component {
+class Present extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			list: []
+			list: [{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			},{
+				title: '这是测试活动',
+				actName: 'PK赛-HP',
+				time: '2018-11-22 14:45:00',
+				location: '上海市南京东路科技京城'
+			}]
 		};
 	}
 
 	componentDidMount() {
-		this.onRefresh();
+		// console.log(this.props);
+		
+		// this.onRefresh();
 	}
 
 	onAddItem = () => {
-		this.scroll && this.scroll.onRefresh();
+		console.log(111);
+		this.props.history.push('/MeetingDetails');
+		// this.scroll && this.scroll.onRefresh();
 	};
 
 	onRefresh = () => {
@@ -39,10 +88,9 @@ export default class Present extends Component {
 	};
 
 	scrollListist(list) {
-		let $list = list.map((item, index) => <HGcard key={index} item={item} />);
+		let $list = list.map((item, index) => <HGcard key={index} item={item} myClick={this.onAddItem} />);
 		return (
 			<div>
-				{/* <div style={{ height: '50px', background: '#000' }} onClick={this.onAddItem} /> */}
 				<Banner params={{ src: require('../../static/circle.png'), title: '今日活动', list: $list }} />
 			</div>
 		);
@@ -56,3 +104,5 @@ export default class Present extends Component {
 		);
 	}
 }
+
+export default withRouter(Present);

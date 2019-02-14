@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SegmentedControl } from 'antd-mobile';
-import { HGcard, Scroll} from '../';
+import { HGcard, Scroll } from '../';
 import './publish.scss';
 
 export default class Publish extends Component {
@@ -47,11 +47,11 @@ export default class Publish extends Component {
 		for (let i = 0; i < 20; i++) {
 			arr.push(obj);
 		}
-		setTimeout(() => {
-			this.setState({
-				list: this.state.list.concat(arr)
-			});
-		}, 1000);
+		// setTimeout(() => {
+		// 	this.setState({
+		// 		list: this.state.list.concat(arr)
+		// 	});
+		// }, 1000);
 	};
 
 	onChange = (e) => {
