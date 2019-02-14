@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Tabs } from 'antd-mobile';
 import { Search, Nav, Present, Publish, ChoiceActivity } from '../../components';
 import './app.scss';
 
-export default class App extends Component {
+import mapStateToProps from '../../store/mapStateToProps';
+import mapDispatchToProps from '../../store/mapDispatchToProps';
+
+class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			disabled: true,
 			tabs: [ { title: '当前' }, { title: '发布' }, { title: '创建' }, { title: '审批' } ]
 		};
+	}
+	componentDidMount() {
+		// console.log(2);
 	}
 
 	onChange = (tab, index) => {
@@ -18,6 +25,8 @@ export default class App extends Component {
 	};
 
 	render() {
+		console.log(this.props.count);
+
 		return (
 			<div className="app">
 				<Nav title="活动管理" />
@@ -62,3 +71,5 @@ export default class App extends Component {
 		);
 	}
 }
+
+export default (App = connect(mapStateToProps, mapDispatchToProps)(App));
