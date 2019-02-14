@@ -42,7 +42,7 @@ export default class Present extends Component {
 		let $list = list.map((item, index) => <HGcard key={index} item={item} />);
 		return (
 			<div>
-				<div style={{ height: '50px', background: '#000' }} onClick={this.onAddItem} />
+				{/* <div style={{ height: '50px', background: '#000' }} onClick={this.onAddItem} /> */}
 				<Banner params={{ src: require('../../static/circle.png'), title: '今日活动', list: $list }} />
 			</div>
 		);
