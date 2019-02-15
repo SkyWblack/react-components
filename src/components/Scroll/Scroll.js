@@ -9,7 +9,7 @@ export default class Scroll extends Component {
 
 	componentDidMount() {
 		this.$el.firstChild.style.minHeight = `${this.$el.offsetHeight + 1}px`;
-		this.scroll = new BScroll(this.$el);
+		this.scroll = new BScroll(this.$el, { click: true });
 		// 父组件触发子组件事件
 		// console.log(this.props.onScrollRefresh);
 
@@ -17,7 +17,6 @@ export default class Scroll extends Component {
 	}
 
 	onRefresh() {
-		console.log(3333333);
 		this.scroll.refresh();
 	}
 

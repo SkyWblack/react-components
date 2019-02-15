@@ -7,6 +7,7 @@
 		display: flex;
 		flex-wrap: nowrap;
 		margin: 0.4rem 0;
+		cursor: pointer;
 		.card-above_left {
 			width: 2.2rem;
 			height: 2.2rem;
@@ -28,11 +29,10 @@
 					text-overflow: ellipsis;
 					font-size: 0.4rem;
 					color: #010101;
-          font-weight: 600;
-          margin: 0;
+					font-weight: 600;
 				}
 				span {
-          display: block;
+					display: block;
 					width: 100%;
 					white-space: nowrap;
 					overflow: hidden;

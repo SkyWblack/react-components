@@ -13,7 +13,7 @@ class HGcard extends Component {
 	render() {
 		return (
 			<div className="hg-card">
-				<div className="card-above" onClick={this.props.myClick}>
+				<div className="card-above" onClick={this.props.CardBodyClick}>
 					<div className="card-above_left" />
 					<div className="card-above_right">
 						<div className="card-above_right_content">

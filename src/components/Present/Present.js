@@ -6,63 +6,72 @@ class Present extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			list: [{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			},{
-				title: '这是测试活动',
-				actName: 'PK赛-HP',
-				time: '2018-11-22 14:45:00',
-				location: '上海市南京东路科技京城'
-			}]
+			list: [
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				},
+				{
+					title: '这是测试活动',
+					actName: 'PK赛-HP',
+					time: '2018-11-22 14:45:00',
+					location: '上海市南京东路科技京城'
+				}
+			]
 		};
 	}
 
 	componentDidMount() {
 		// console.log(this.props);
-		
 		// this.onRefresh();
 	}
 
 	onAddItem = () => {
-		console.log(111);
+		// alert(111);
 		this.props.history.push('/MeetingDetails');
 		// this.scroll && this.scroll.onRefresh();
 	};
@@ -88,7 +97,7 @@ class Present extends Component {
 	};
 
 	scrollListist(list) {
-		let $list = list.map((item, index) => <HGcard key={index} item={item} myClick={this.onAddItem} />);
+		let $list = list.map((item, index) => <HGcard key={index} item={item} CardBodyClick={this.onAddItem} />);
 		return (
 			<div>
 				<Banner params={{ src: require('../../static/circle.png'), title: '今日活动', list: $list }} />

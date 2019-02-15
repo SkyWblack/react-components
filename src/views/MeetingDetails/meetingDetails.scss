@@ -1,0 +1,50 @@
+.hg-meetingDetails {
+	height: 100%;
+	overflow: hidden;
+	.meetingDetails-cover {
+		height: calc(100% - 45px);
+		overflow: scroll;
+		.warpper {
+			display: flex;
+			padding: 0.4rem 0.53333rem;
+			overflow: hidden;
+			background-color: #fff;
+			flex-wrap: nowrap;
+			.meetingDetails-cover_img {
+				width: 2.2rem;
+				height: 2.2rem;
+				border-radius: 0.10667rem;
+				overflow: hidden;
+				background-color: #897978;
+			}
+			.meetingDetails-cover_descriptions {
+				flex: 1;
+				letter-spacing: 0.02667rem;
+				padding-left: 0.4rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				h1 {
+					font-size: 0.4rem;
+					color: #010101;
+				}
+				span {
+					display: block;
+					font-size: 15px;
+				}
+			}
+		}
+		.meetingDetails-list {
+			.am-list-header {
+				background: #f0f0f0;
+				color: #047afb;
+			}
+			.am-list-extra {
+				flex-basis: 60%;
+			}
+		}
+	}
+}
